@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Grid pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, #1e3a8a10 1px, transparent 1px),
+    linear-gradient(to bottom, #1e3a8a10 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-grid-pattern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.1), transparent 40%),
+    radial-gradient(circle at 0% 50%, rgba(168, 85, 247, 0.1), transparent 40%),
+    radial-gradient(circle at 100% 50%, rgba(59, 130, 246, 0.1), transparent 40%);
+  z-index: 1;
+}
+
+/* Animated particles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particles::before,
+.particles::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particles::before {
+  background-image: 
+    radial-gradient(circle at center, #3b82f620 1px, transparent 1px),
+    radial-gradient(circle at center, #3b82f610 2px, transparent 2px);
+  background-size: 48px 48px, 24px 24px;
+  animation: particleFloat 20s linear infinite;
+}
+
+.particles::after {
+  background-image: 
+    radial-gradient(circle at center, #8b5cf620 1px, transparent 1px),
+    radial-gradient(circle at center, #8b5cf610 2px, transparent 2px);
+  background-size: 36px 36px, 18px 18px;
+  animation: particleFloat 15s linear infinite reverse;
+}
+
+/* Cyberpunk lines */
+.cyber-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0.1;
+}
+
+.cyber-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 20%,
+    rgba(59, 130, 246, 0.1) 20%,
+    rgba(59, 130, 246, 0.1) 20.5%,
+    transparent 20.5%,
+    transparent 30%
+  );
+  animation: cyberMove 15s linear infinite;
+}
+
+/* Animations */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-48px);
+  }
+}
+
+@keyframes cyberMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(20%) translateY(-20%);
+  }
+}
