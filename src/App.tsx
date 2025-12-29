@@ -73,7 +73,7 @@ function App() {
                   Hello, I'm Mahmudul Hasan Badhan
                 </h1>
                 <p className="text-2xl text-gray-400">
-                  Computer Science & Engineering Student
+                  Research Assistant
                 </p>
                 <p className="text-lg text-gray-500 max-w-2xl">
                   Specializing in Machine Learning and Web Development. Passionate about pushing the boundaries
@@ -137,7 +137,7 @@ function App() {
                         <li>Deep Learning Architectures</li>
                         <li>Natural Language Processing</li>
                         <li>Computer Vision</li>
-                        <li>Data Analysis & Visualization</li>
+                        <li>Speech Processing</li>
                       </ul>
                     </div>
                     <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
@@ -201,58 +201,163 @@ function App() {
         )}
 
         {activeSection === 'research' && (
-          <section className="space-y-8">
-            <h2 className="text-4xl font-bold text-white">Research Work</h2>
-            <div className="grid grid-cols-1 gap-6">
-              <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold">[Conference Paper Title]</h3>
-                    <p className="text-gray-400">[Conference Name, Year]</p>
-                  </div>
-                  <Award className="text-blue-400" size={24} />
-                </div>
-                <p className="text-gray-400">
-                  Brief description of your research paper. Highlight the key findings,
-                  methodology, and impact of your work.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Machine Learning</span>
-                  <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Neural Networks</span>
-                  <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Data Analysis</span>
-                </div>
-              </div>
+  <section className="space-y-8">
+    <h2 className="text-4xl font-bold text-white">Research Work</h2>
 
-              <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                <h3 className="text-2xl font-bold mb-4">Research Interests</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <h4 className="font-semibold flex items-center space-x-2">
-                      <Brain size={16} />
-                      <span>Machine Learning</span>
-                    </h4>
-                    <ul className="list-disc list-inside text-gray-400">
-                      <li>Deep Learning Architectures</li>
-                      <li>Natural Language Processing</li>
-                      <li>Computer Vision</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold flex items-center space-x-2">
-                      <Globe size={16} />
-                      <span>Web Technologies</span>
-                    </h4>
-                    <ul className="list-disc list-inside text-gray-400">
-                      <li>Distributed Systems</li>
-                      <li>Cloud Computing</li>
-                      <li>Web Security</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+    <div className="grid grid-cols-1 gap-6">
+
+      {/* Paper 1 */}
+      <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 className="text-2xl font-bold">
+              A Comparative Study of Deep Learning Models for Bias Detection in Bangla Job Advertisements
+            </h3>
+            <p className="text-gray-400">ICCIT 2025, IEEE</p>
+          </div>
+          <Award className="text-blue-400" size={24} />
+        </div>
+        <p className="text-gray-400">
+          This paper presents a comparative analysis of multiple deep learning architectures
+          for detecting bias in Bangla job advertisements, focusing on fairness, accuracy,
+          and real-world applicability.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Bias Detection</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Deep Learning</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">NLP</span>
+        </div>
+      </div>
+
+      {/* Paper 2 */}
+      <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 className="text-2xl font-bold">
+              Sentence-Level Indigenous Language Identification in Bangladesh: 
+              A Comparative Study of Attention-Based RNNs and Transformer Models
+            </h3>
+            <p className="text-gray-400">ICCIT 2025, IEEE</p>
+          </div>
+          <Award className="text-blue-400" size={24} />
+        </div>
+        <p className="text-gray-400">
+          This study explores sentence-level indigenous language identification using
+          attention-based RNNs and Transformer models, highlighting performance
+          differences across low-resource languages in Bangladesh.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Language Identification</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Transformers</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Attention Models</span>
+        </div>
+      </div>
+
+      {/* Paper 3 */}
+      <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 className="text-2xl font-bold">
+              Exploring Regional Variation in Bangla: Automating Dialect Classification Using Deep Learning
+            </h3>
+            <p className="text-gray-400">ICCIT 2025, IEEE</p>
+          </div>
+          <Award className="text-blue-400" size={24} />
+        </div>
+        <p className="text-gray-400">
+          This research investigates regional variations in Bangla by developing deep
+          learning-based dialect classification models, contributing to sociolinguistic
+          analysis and language technology.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Dialect Classification</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Deep Learning</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Bangla NLP</span>
+        </div>
+      </div>
+
+      {/* Paper 4 */}
+      <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 className="text-2xl font-bold">
+              Preserving Bangla Literary Heritage: Deep Learning for Automated Poem Meter Classification
+            </h3>
+            <p className="text-gray-400">ICCIT 2025, IEEE</p>
+          </div>
+          <Award className="text-blue-400" size={24} />
+        </div>
+        <p className="text-gray-400">
+          This paper proposes a deep learning-based framework for automated Bangla poem
+          meter classification, supporting digital preservation and computational
+          literary analysis.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Poem Meter Classification</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Literary NLP</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Deep Learning</span>
+        </div>
+      </div>
+
+      {/* Paper 5 */}
+      <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 className="text-2xl font-bold">
+              Ethnic Language Classification in Bangladesh Using Machine Learning
+            </h3>
+            <p className="text-gray-400">ICCIT 2025, IEEE</p>
+          </div>
+          <Award className="text-blue-400" size={24} />
+        </div>
+        <p className="text-gray-400">
+          This work applies traditional and machine learning models to classify ethnic
+          languages in Bangladesh, addressing challenges of low-resource and imbalanced
+          datasets.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Ethnic Languages</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Machine Learning</span>
+          <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Text Classification</span>
+        </div>
+        
+      </div>
+       <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+
+        <h3 className="text-2xl font-bold mb-4">Research Interests</h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <h4 className="font-semibold flex items-center space-x-2">
+              <Brain size={16} />
+              <span>Machine Learning</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-400">
+              <li>Deep Learning Architectures</li>
+              <li>Natural Language Processing</li>
+              <li>Computer Vision</li>
+            </ul>
+          </div>
+
+          <div className="space-y-2">
+            <h4 className="font-semibold flex items-center space-x-2">
+              <Globe size={16} />
+              <span>Web Technologies</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-400">
+              <li>Distributed Systems</li>
+              <li>Cloud Computing</li>
+              <li>Web Security</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+)}
+
 
         {activeSection === 'projects' && (
           <section className="space-y-8">
