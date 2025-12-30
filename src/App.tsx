@@ -1,6 +1,8 @@
-import React from 'react';
+// import React from 'react';
 import { Code2, User, Mail, Home, Brain, BookOpen, Globe, Database, Terminal, Award } from 'lucide-react';
 import { useState } from 'react';
+import { Briefcase } from 'lucide-react'
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -42,6 +44,17 @@ function App() {
                 <BookOpen size={20} />
                 <span>Research</span>
               </button>
+              <button
+  onClick={() => setActiveSection('experience')}
+  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all
+    ${                  activeSection === 'experience' ? 'bg-blue-500/20 text-blue-400' : 'hover:bg-blue-500/10'
+
+    }`}
+>
+  <Briefcase size={18} />
+  <span>Experience</span>
+</button>
+
               <button 
                 onClick={() => setActiveSection('projects')}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
@@ -50,14 +63,16 @@ function App() {
                 <Code2 size={20} />
                 <span>Projects</span>
               </button>
-              <button 
+              {/* contact button disable for now */}
+              {/* <button 
                 onClick={() => setActiveSection('contact')}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
                   activeSection === 'contact' ? 'bg-blue-500/20 text-blue-400' : 'hover:bg-blue-500/10'
                 }`}>
                 <Mail size={20} />
                 <span>Contact</span>
-              </button>
+              </button> */}
+              
             </div>
           </div>
         </div>
@@ -116,6 +131,134 @@ function App() {
             </div>
           </section>
         )}
+        {activeSection === 'experience' && (
+  <section className="space-y-12">
+
+    {/* ================= PROFESSIONAL EXPERIENCE ================= */}
+    <div className="space-y-8">
+      <h2 className="text-4xl font-bold text-white">
+        Professional Experience
+      </h2>
+
+      <div className="grid grid-cols-1 gap-6">
+         {/* Research Assistant */}
+        <div className="bg-blue-500/10 rounded-lg p-6 space-y-3 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">Research Assistant</h3>
+          <p className="text-gray-300 font-medium">
+            Supervisor: Md. Abu Naser Mojumder
+          </p>
+          <p className="text-gray-400 text-sm">10/2025 – Present · Sylhet, Bangladesh</p>
+          <p className="text-gray-400">
+            Working on machine learning and deep learning–based research projects,
+            focusing on NLP, low-resource languages, and academic publications.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Deep Learning</span>
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">NLP</span>
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Research</span>
+          </div>
+        </div>
+
+        {/* AI Engineer */}
+        <div className="bg-blue-500/10 rounded-lg p-6 space-y-3 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">AI Engineer (Remote)</h3>
+          <p className="text-gray-300 font-medium">Debugger Lab</p>
+          <p className="text-gray-400 text-sm">06/2025 – 07/2025 · Mymensingh, Bangladesh</p>
+          <p className="text-gray-400">
+            Worked on developing and deploying AI models and data pipelines for
+            production-level applications, ensuring scalability and performance.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Machine Learning</span>
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Data Pipelines</span>
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Production AI</span>
+          </div>
+        </div>
+
+        {/* Python Instructor */}
+        <div className="bg-blue-500/10 rounded-lg p-6 space-y-3 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">Python Instructor</h3>
+          <p className="text-gray-300 font-medium">
+            International Center for Global Skills (ICGS)
+          </p>
+          <p className="text-gray-400 text-sm">02/2024 – 08/2024 · Sylhet, Bangladesh</p>
+          <p className="text-gray-400">
+            Taught Python fundamentals and real-world programming applications,
+            mentoring students through hands-on projects and problem-solving.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Python</span>
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Teaching</span>
+            <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Applied Programming</span>
+          </div>
+        </div>
+
+       
+
+      </div>
+    </div>
+
+    {/* ================= LEADERSHIP & ACADEMIC ACTIVITIES ================= */}
+    <div className="space-y-8">
+      <h2 className="text-4xl font-bold text-white">
+        Leadership & Academic Activities
+      </h2>
+
+      <div className="grid grid-cols-1 gap-6">
+
+        <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">
+            Vice President — SEC CSE Society
+          </h3>
+          <p className="text-gray-400 text-sm">2025</p>
+          <p className="text-gray-400">
+            Led academic and technical initiatives, coordinated events, and supported
+            student engagement in computing and research-focused activities.
+          </p>
+        </div>
+
+        <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">
+            Organising Secretary — SEC CSE Society
+          </h3>
+          <p className="text-gray-400 text-sm">2024</p>
+          <p className="text-gray-400">
+            Managed event planning, logistics, and coordination for academic and
+            extracurricular programs within the CSE community.
+          </p>
+        </div>
+
+        <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">
+            Organising Secretary — CSE Research Club
+          </h3>
+          <p className="text-gray-400 text-sm">2025</p>
+
+          <p className="text-gray-400">
+            Organized research-focused seminars and workshops, promoting undergraduate
+            research culture and collaboration.
+          </p>
+        </div>
+
+        <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+          <h3 className="text-2xl font-bold">
+            Web Coordinator — SEC Programming Club
+          </h3>
+          <p className="text-gray-400 text-sm">2024-2025</p>
+
+          <p className="text-gray-400">
+            Maintained web presence, managed online content, and supported digital
+            engagement for programming-related activities.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+)}
+
+
 
         {activeSection === 'about' && (
           <section className="space-y-8">
@@ -322,37 +465,7 @@ function App() {
         </div>
         
       </div>
-       <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-
-        <h3 className="text-2xl font-bold mb-4">Research Interests</h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <h4 className="font-semibold flex items-center space-x-2">
-              <Brain size={16} />
-              <span>Machine Learning</span>
-            </h4>
-            <ul className="list-disc list-inside text-gray-400">
-              <li>Deep Learning Architectures</li>
-              <li>Natural Language Processing</li>
-              <li>Computer Vision</li>
-            </ul>
-          </div>
-
-          <div className="space-y-2">
-            <h4 className="font-semibold flex items-center space-x-2">
-              <Globe size={16} />
-              <span>Web Technologies</span>
-            </h4>
-            <ul className="list-disc list-inside text-gray-400">
-              <li>Distributed Systems</li>
-              <li>Cloud Computing</li>
-              <li>Web Security</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
+       
 
     </div>
   </section>
@@ -370,17 +483,16 @@ function App() {
                   <span>Machine Learning Projects</span>
                 </h3>
                 <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                  <h4 className="text-xl font-bold">[ML Project Name]</h4>
+                  <h4 className="text-xl font-bold">Infant Cry Detection</h4>
                   <p className="text-gray-400">
-                    Description of your machine learning project. Include the problem solved,
-                    technologies used, and results achieved.
+                     A machine learning model to detect and classify infant cries using audio preprocessing, feature extraction, and deep learning for real-time monitoring
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">TensorFlow</span>
-                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Python</span>
-                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Deep Learning</span>
+                    {/* <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">TensorFlow</span> */}
+                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Pytorch</span>
+                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Machine Learning</span>
                   </div>
-                  <a href="#" className="text-blue-400 hover:text-blue-300 flex items-center space-x-2">
+                  <a href="https://childcryanalysis-lfyyao7rchj9dbsgxr7duf.streamlit.app/" target='_blank' className="text-blue-400 hover:text-blue-300 flex items-center space-x-2">
                     <span>View Project</span>
                     <Code2 size={16} />
                   </a>
@@ -394,17 +506,17 @@ function App() {
                   <span>Web Development Projects</span>
                 </h3>
                 <div className="bg-blue-500/10 rounded-lg p-6 space-y-4 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                  <h4 className="text-xl font-bold">[Web Project Name]</h4>
+                  <h4 className="text-xl font-bold">Savoria Restaurant</h4>
                   <p className="text-gray-400">
-                    Description of your web development project. Highlight the features,
-                    technologies, and your role in development.
+                    Built a responsive restaurant website with dynamic content, interactive UI, and API-ready architecture
+using modern web development practices.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">React</span>
-                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Node.js</span>
-                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">MongoDB</span>
+                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">API Integration Patterns</span>
+                    <span className="px-2 py-1 bg-blue-500/20 rounded text-sm">Modern CSS Animations</span>
                   </div>
-                  <a href="#" className="text-blue-400 hover:text-blue-300 flex items-center space-x-2">
+                  <a href="https://savoria-food-place.netlify.app/" target='_blank' className="text-blue-400 hover:text-blue-300 flex items-center space-x-2">
                     <span>View Project</span>
                     <Code2 size={16} />
                   </a>
