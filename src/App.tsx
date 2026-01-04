@@ -2,6 +2,8 @@
 import { Code2, User, Mail, Home, Brain, BookOpen, Globe, Database, Terminal, Award } from 'lucide-react';
 import { useState } from 'react';
 import { Briefcase } from 'lucide-react'
+import profileImg from "./image.jpg";
+
 
 
 function App() {
@@ -150,11 +152,12 @@ function App() {
       <div className="flex justify-center lg:justify-end">
         <div className="relative">
           <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl"></div>
-          <img
-            src="/src/image.jpg"   // <-- put your image in public folder
-            alt="Mahmudul Hasan Badhan"
-            className="relative w-72 h-72   object-cover rounded-full border-4 border-blue-500/30 shadow-xl"
-          />
+         <img
+  src={profileImg}
+  alt="Mahmudul Hasan Badhan"
+  className="relative w-72 h-72 object-cover rounded-full border-4 border-blue-500/30 shadow-xl"
+/>
+
         </div>
       </div>
 
