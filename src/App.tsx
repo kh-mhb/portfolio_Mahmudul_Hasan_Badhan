@@ -80,57 +80,88 @@ function App() {
 
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 pt-24 pb-12 relative z-10">
-        {activeSection === 'home' && (
-          <section className="min-h-[80vh] flex items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h1 className="text-6xl font-bold text-white">
-                  Hello, I'm Mahmudul Hasan Badhan
-                </h1>
-                <p className="text-2xl text-gray-400">
-                  Research Assistant
-                </p>
-                <p className="text-lg text-gray-500 max-w-2xl">
-                  Specializing in Machine Learning and Web Development. Passionate about pushing the boundaries
-                  of technology through innovative research and practical applications.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl">
-                <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                  <Brain className="w-8 h-8 mb-2 text-blue-400" />
-                  <h3 className="font-semibold mb-1">Machine Learning</h3>
-                  <p className="text-sm text-gray-400">Deep learning, Neural Networks, Data Analysis</p>
-                </div>
-                <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                  <Globe className="w-8 h-8 mb-2 text-blue-400" />
-                  <h3 className="font-semibold mb-1">Web Development</h3>
-                  <p className="text-sm text-gray-400">Full-stack Development, Modern Frameworks</p>
-                </div>
-                <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-                  <BookOpen className="w-8 h-8 mb-2 text-blue-400" />
-                  <h3 className="font-semibold mb-1">Research</h3>
-                  <p className="text-sm text-gray-400">Published Papers, Conference Presentations</p>
-                </div>
-              </div>
+          {activeSection === 'home' && (
+  <section className="min-h-[80vh] flex items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12 items-center w-full">
 
-              <div className="flex space-x-4">
-                <button 
-                  onClick={() => setActiveSection('projects')}
-                  className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center space-x-2 transition-all">
-                  <Code2 size={20} />
-                  <span>View Projects</span>
-                </button>
-                <button 
-                  onClick={() => setActiveSection('research')}
-                  className="px-6 py-3 border border-blue-500 hover:bg-blue-500/20 rounded-lg flex items-center space-x-2 transition-all backdrop-blur-sm">
-                  <BookOpen size={20} />
-                  <span>Research Work</span>
-                </button>
-              </div>
-            </div>
-          </section>
-        )}
+
+      {/* LEFT: TEXT CONTENT */}
+      <div className="space-y-8">
+        <div className="space-y-6">
+          <h1 className="text-6xl font-bold text-white">
+            Hello, I'm <br /> Mahmudul Hasan Badhan
+          </h1>
+          <p className="text-2xl text-gray-400">
+            Research Assistant
+          </p>
+          <p className="text-lg text-gray-500 max-w-2xl">
+            Research Assistant specializing in Machine Learning and Deep Learning, focused on Natural Language Processing and developing impactful, real-world AI solutions
+          </p>
+        </div>
+
+        {/* SKILL CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl">
+          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+            <Brain className="w-8 h-8 mb-2 text-blue-400" />
+            <h3 className="font-semibold mb-1">Machine Learning</h3>
+            <p className="text-sm text-gray-400">
+              Deep learning, Neural Networks, Data Analysis
+            </p>
+          </div>
+
+          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+            <Globe className="w-8 h-8 mb-2 text-blue-400" />
+            <h3 className="font-semibold mb-1">Web Development</h3>
+            <p className="text-sm text-gray-400">
+              Full-stack Development, Modern Frameworks
+            </p>
+          </div>
+
+          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
+            <BookOpen className="w-8 h-8 mb-2 text-blue-400" />
+            <h3 className="font-semibold mb-1">Research</h3>
+            <p className="text-sm text-gray-400">
+              Published Papers, Conference Presentations
+            </p>
+          </div>
+        </div>
+
+        {/* BUTTONS */}
+        <div className="flex space-x-4">
+          <button
+            onClick={() => setActiveSection('projects')}
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center space-x-2 transition-all"
+          >
+            <Code2 size={20} />
+            <span>View Projects</span>
+          </button>
+
+          <button
+            onClick={() => setActiveSection('research')}
+            className="px-6 py-3 border border-blue-500 hover:bg-blue-500/20 rounded-lg flex items-center space-x-2 transition-all backdrop-blur-sm"
+          >
+            <BookOpen size={20} />
+            <span>Research Work</span>
+          </button>
+        </div>
+      </div>
+
+      {/* RIGHT: PROFILE IMAGE */}
+      <div className="flex justify-center lg:justify-end">
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl"></div>
+          <img
+            src="/src/image.jpg"   // <-- put your image in public folder
+            alt="Mahmudul Hasan Badhan"
+            className="relative w-72 h-72   object-cover rounded-full border-4 border-blue-500/30 shadow-xl"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+)}
+
         {activeSection === 'experience' && (
   <section className="space-y-12">
 
@@ -266,9 +297,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <p className="text-gray-400">
-                  I'm a Computer Science & Engineering student passionate about machine learning and web development.
-                  My research focuses on applying AI to solve real-world problems, while my development work
-                  brings these solutions to life through web applications.
+                  I am a Computer Science and Engineering student with a strong interest in Machine Learning and Deep Learning. My research explores AI-based approaches to solving real-world problems, while my development experience focuses on deploying these solutions as scalable web applications.
                 </p>
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold">Areas of Focus</h3>
@@ -333,7 +362,7 @@ function App() {
                 <div className="bg-blue-500/10 rounded-lg p-6 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
                   <h3 className="text-2xl font-bold mb-4">Education</h3>
                   <div className="space-y-2">
-                    <p className="font-semibold">B.Tech in Computer Science & Engineering</p>
+                    <p className="font-semibold">B.Sc in Computer Science & Engineering</p>
                     <p className="text-gray-400">Shahjalal University of Science and Technology</p>
                     <p className="text-gray-500">Passing Year: July 2025</p>
                   </div>
