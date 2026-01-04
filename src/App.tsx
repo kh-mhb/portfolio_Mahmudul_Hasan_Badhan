@@ -6,6 +6,8 @@ import profileImg from "./image.jpg";
 
 
 
+
+
 function App() {
   const [activeSection, setActiveSection] = useState('home');
 
@@ -82,88 +84,151 @@ function App() {
 
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 pt-24 pb-12 relative z-10">
-          {activeSection === 'home' && (
+          {activeSection === "home" && (
   <section className="min-h-[80vh] flex items-center">
     <div className="grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12 items-center w-full">
 
-
-      {/* LEFT: TEXT CONTENT */}
+      {/* LEFT CONTENT */}
       <div className="space-y-8">
         <div className="space-y-6">
-          <h1 className="text-6xl font-bold text-white">
+          <h1 className="text-6xl font-bold text-white leading-tight">
             Hello, I'm <br /> Mahmudul Hasan Badhan
           </h1>
+
           <p className="text-2xl text-gray-400">
             Research Assistant
           </p>
+
           <p className="text-lg text-gray-500 max-w-2xl">
-            Research Assistant specializing in Machine Learning and Deep Learning, focused on Natural Language Processing and developing impactful, real-world AI solutions
+            Research Assistant specializing in Machine Learning and Deep Learning,
+            focused on designing intelligent models and developing impactful,
+            real-world AI solutions through research and engineering.
           </p>
         </div>
 
-        {/* SKILL CARDS */}
+        {/* SKILLS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl">
-          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-            <Brain className="w-8 h-8 mb-2 text-blue-400" />
-            <h3 className="font-semibold mb-1">Machine Learning</h3>
+
+          {/* Machine Learning */}
+          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 transition-all">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png"
+              alt="ML"
+              className="w-8 h-8 mb-2"
+            />
+            <h3 className="font-semibold mb-1 text-white">Machine Learning</h3>
             <p className="text-sm text-gray-400">
-              Deep learning, Neural Networks, Data Analysis
+              Deep Learning, Neural Networks, Optimization
             </p>
           </div>
 
-          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-            <Globe className="w-8 h-8 mb-2 text-blue-400" />
-            <h3 className="font-semibold mb-1">Web Development</h3>
+          {/* Web Development */}
+          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 transition-all">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png"
+              alt="Web"
+              className="w-8 h-8 mb-2"
+            />
+            <h3 className="font-semibold mb-1 text-white">Web Development</h3>
             <p className="text-sm text-gray-400">
               Full-stack Development, Modern Frameworks
             </p>
           </div>
 
-          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 backdrop-blur-sm hover:bg-blue-500/20 transition-all">
-            <BookOpen className="w-8 h-8 mb-2 text-blue-400" />
-            <h3 className="font-semibold mb-1">Research</h3>
+          {/* Research */}
+          <div className="bg-blue-500/10 p-4 rounded-lg border border-blue-500/20 hover:bg-blue-500/20 transition-all">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              alt="Research"
+              className="w-8 h-8 mb-2"
+            />
+            <h3 className="font-semibold mb-1 text-white">Research</h3>
             <p className="text-sm text-gray-400">
-              Published Papers, Conference Presentations
+              Conference Papers, Experimental Analysis
             </p>
           </div>
+
         </div>
 
         {/* BUTTONS */}
         <div className="flex space-x-4">
           <button
-            onClick={() => setActiveSection('projects')}
-            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center space-x-2 transition-all"
+            onClick={() => setActiveSection("projects")}
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition-all"
           >
-            <Code2 size={20} />
-            <span>View Projects</span>
+            View Projects
           </button>
 
           <button
-            onClick={() => setActiveSection('research')}
-            className="px-6 py-3 border border-blue-500 hover:bg-blue-500/20 rounded-lg flex items-center space-x-2 transition-all backdrop-blur-sm"
+            onClick={() => setActiveSection("research")}
+            className="px-6 py-3 border border-blue-500 hover:bg-blue-500/20 rounded-lg transition-all"
           >
-            <BookOpen size={20} />
-            <span>Research Work</span>
+            Research Work
           </button>
         </div>
       </div>
 
-      {/* RIGHT: PROFILE IMAGE */}
+      {/* RIGHT CONTENT */}
       <div className="flex justify-center lg:justify-end">
-        <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl"></div>
-         <img
-  src={profileImg}
-  alt="Mahmudul Hasan Badhan"
-  className="relative w-72 h-72 object-cover rounded-full border-4 border-blue-500/30 shadow-xl"
-/>
+        <div className="flex flex-col items-center space-y-4">
 
+          {/* Profile Image */}
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl"></div>
+            <img
+              src={profileImg}
+              alt="Mahmudul Hasan Badhan"
+              className="relative w-72 h-72 object-cover rounded-full border-4 border-blue-500/30 shadow-xl"
+            />
+          </div>
+
+          {/* SOCIAL LINKS */}
+          <div className="flex space-x-4">
+
+            <a
+  href="https://github.com/kh-mhb"
+  target="_blank"
+  className="p-3 rounded-full bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-all"
+>
+  <img
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    alt="GitHub"
+    className="w-5 h-5 invert"
+  />
+</a>
+
+            <a
+              href="https://www.linkedin.com/in/mahmudul-hasan-badhan-743370291/"
+              target="_blank"
+              className="p-3 rounded-full bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/30 transition-all"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                alt="LinkedIn"
+                className="w-5 h-5"
+              />
+            </a>
+
+            <a
+              href="https://www.kaggle.com/mahmudulhasanbadhan"
+              target="_blank"
+              className="p-3 rounded-full bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/30 transition-all"
+            >
+              <img
+                src="https://www.kaggle.com/static/images/site-logo.svg"
+                alt="Kaggle"
+                className="w-5 h-5"
+              />
+            </a>
+
+          </div>
         </div>
       </div>
 
     </div>
   </section>
 )}
+
 
         {activeSection === 'experience' && (
   <section className="space-y-12">
